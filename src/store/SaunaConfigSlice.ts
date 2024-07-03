@@ -58,6 +58,13 @@ const SaunaConfigSlice = createSlice({
     setAccessories: (state, action: PayloadAction<string>) => {
       state.accessories = action.payload;
     },
+
+    nextStep: (state) => {
+      state.currentConfigStepId += 1;
+    },
+    previousStep: (state) => {
+      if (state.currentConfigStepId > 0) state.currentConfigStepId -= 1;
+    },
   },
 });
 
@@ -69,6 +76,8 @@ export const {
   setLighting,
   setFacade,
   setAccessories,
+  nextStep,
+  previousStep,
 } = SaunaConfigSlice.actions;
 
 export default SaunaConfigSlice.reducer;
