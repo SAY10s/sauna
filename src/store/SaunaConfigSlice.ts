@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface SaunaConfigStateInterface {
+export interface SaunaConfigStateInterface {
   [key: string]: string | null | number;
 
   currentConfigStepId: number;
