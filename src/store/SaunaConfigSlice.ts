@@ -17,19 +17,34 @@ export interface SaunaConfigStateInterface {
   accessories: string | null;
 }
 
+// const initialState: SaunaConfigStateInterface = {
+//   currentConfigStepId: 0,
+//
+//   model: null,
+//
+//   glazing: null,
+//   facade: null,
+//   interiorFinish: null,
+//   bench: null,
+//   stove: null,
+//   lighting: null,
+//
+//   accessories: null,
+// };
+
 const initialState: SaunaConfigStateInterface = {
-  currentConfigStepId: 0,
+  currentConfigStepId: 8,
 
   model: "Model 1",
 
   glazing: "pink",
-  facade: null,
-  interiorFinish: null,
-  bench: null,
-  stove: null,
-  lighting: null,
+  facade: "red",
+  interiorFinish: "green",
+  bench: "blue!",
+  stove: "silly",
+  lighting: "shiny",
 
-  accessories: null,
+  accessories: "none",
 };
 
 const SaunaConfigSlice = createSlice({
@@ -63,7 +78,7 @@ const SaunaConfigSlice = createSlice({
     },
 
     nextStep: (state) => {
-      if (state.currentConfigStepId < 7) state.currentConfigStepId += 1;
+      if (state.currentConfigStepId < 8) state.currentConfigStepId += 1;
     },
     previousStep: (state) => {
       if (state.currentConfigStepId > 0) state.currentConfigStepId -= 1;

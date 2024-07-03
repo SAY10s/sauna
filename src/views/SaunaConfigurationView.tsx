@@ -4,6 +4,7 @@ import ConfigurationOfGivenStepWrapper from "../components/configurationOptions/
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store.ts";
 import { CONFIGURATION_OPTIONS } from "../const/const.ts";
+import ConfigurationSummaryWrapper from "../components/configurationSummary/ConfigurationSummaryWrapper.tsx";
 
 const SaunaConfigurationView = () => {
   const currentConfigStepId = useSelector(
@@ -24,7 +25,7 @@ const SaunaConfigurationView = () => {
           configurationOptions={currentConfigOptions}
         />
       ) : (
-        <h1>Podsumowanie panel</h1>
+        <ConfigurationSummaryWrapper />
       )}
     </div>
   );
