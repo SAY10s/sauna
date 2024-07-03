@@ -6,6 +6,7 @@ export const CURRENT_CONFIG_STEP_NAME_IN_POLISH = [
   "piec",
   "oświetlenie",
   "akcesoria",
+  "podsumowanie",
 ];
 export const CURRENT_CONFIG_STEP_NAME_IN_ENGLISH = [
   "model",
@@ -16,6 +17,7 @@ export const CURRENT_CONFIG_STEP_NAME_IN_ENGLISH = [
   "stove",
   "lighting",
   "accessories",
+  "summary",
 ];
 
 const CONFIGURATION_OPTIONS_GLAZING = [

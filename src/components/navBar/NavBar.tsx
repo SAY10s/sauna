@@ -17,10 +17,15 @@ const NavBar = () => {
 
   return (
     <div>
-      <h3>Navigation Bar</h3>
-      {CURRENT_CONFIG_STEP_NAME_IN_POLISH.map((step, index) => (
-        <div key={index}>{step}</div>
-      ))}
+      {CURRENT_CONFIG_STEP_NAME_IN_POLISH.map((step, index) => {
+        if (index === choosenConfig.currentConfigStepId)
+          return (
+            <div key={index}>
+              <h3>{step}</h3>
+            </div>
+          );
+        else return <div key={index}>{step}</div>;
+      })}
       <br />
       {Object.entries(choosenConfig).map(([key, value], index) => {
         if (value !== null && key !== "currentConfigStepId") {

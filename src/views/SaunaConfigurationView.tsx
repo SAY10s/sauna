@@ -19,9 +19,13 @@ const SaunaConfigurationView = () => {
         <ImageSlider />
         <NavBar />
       </div>
-      <ConfigurationOfGivenStepWrapper
-        configurationOptions={currentConfigOptions}
-      />
+      {currentConfigOptions ? (
+        <ConfigurationOfGivenStepWrapper
+          configurationOptions={currentConfigOptions}
+        />
+      ) : (
+        <h1>Podsumowanie panel</h1>
+      )}
     </div>
   );
 };

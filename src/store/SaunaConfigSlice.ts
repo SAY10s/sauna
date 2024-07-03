@@ -60,7 +60,7 @@ const SaunaConfigSlice = createSlice({
     },
 
     nextStep: (state) => {
-      state.currentConfigStepId += 1;
+      if (state.currentConfigStepId < 7) state.currentConfigStepId += 1;
     },
     previousStep: (state) => {
       if (state.currentConfigStepId > 0) state.currentConfigStepId -= 1;
