@@ -1,0 +1,62 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+//articles
+@use "./articles/article" as *;
+@use "./articles/headerArticle" as *;
+@use "./articles/backgroundArticle" as *;
+@use "./articles/imageArticle" as *;
+@use "./articles/regularArticle.scss" as *;
+@use "./articles/detailsArticle.scss" as *;
+
+main {
+  @include flex-col-center;
+  width: 100%;
+
+  .container {
+    @include flex-col-center;
+    width: 100%;
+    padding: 4rem 0rem;
+
+    gap: 1rem;
+  }
+
+  //dark container
+  .container:nth-child(odd) {
+    background-color: $colorDark;
+    color: $colorLight;
+
+    .backgroundArticle {
+      background-color: $colorSecondaryDark;
+      color: $colorLight;
+    }
+  }
+
+  //light container
+  .container:nth-child(even) {
+    background-color: $colorLight;
+    color: $colorDark;
+
+    .backgroundArticle {
+      background-color: $colorSecondaryLight;
+      color: $colorDark;
+    }
+  }
+}
+@media (min-width: 1280px) {
+  main {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      padding-left: 20%;
+      padding-right: 20%;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+
+      min-height: 50vh;
+
+      gap: 1.5rem 3rem;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+footer {
+  @include flex-col-center;
+
+  width: 100%;
+  padding: 1rem;
+
+  background-color: $colorDark;
+  color: $colorLight;
+}

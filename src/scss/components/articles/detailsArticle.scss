@@ -1,0 +1,81 @@
+@use "../../mixins" as *;
+@use "../../variables" as *;
+
+.detailsArticle {
+  width: 90%;
+  h3 {
+    margin-bottom: unset;
+  }
+
+  details {
+    @include flex-row-center;
+    border-radius: 0.5rem;
+
+    summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: $headerFont;
+
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+    }
+
+    p {
+      border-radius: 0 0 0.5rem 0.5rem;
+      padding: 1rem;
+    }
+  }
+
+  details > summary {
+    border-radius: 0.5rem;
+  }
+  details[open] > summary {
+    border-radius: 0.5rem 0.5rem 0 0;
+    color: $colorPrimary;
+
+    box-shadow: $boxShadow;
+    z-index: 5;
+  }
+
+  //details arrow
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::after {
+    content: "⋁";
+  }
+  details[open] > summary::after {
+    content: "⋀";
+  }
+}
+
+//FIXME: for some reason the following code is required.
+main {
+  //dark container
+  .container:nth-child(odd) {
+    .detailsArticle {
+      border-radius: 0.5rem;
+      background-color: $colorSecondaryDark;
+      color: $colorLight;
+      border: 2px solid $colorLight;
+    }
+  }
+
+  //light container
+  .container:nth-child(even) {
+    .detailsArticle {
+      border-radius: 0.5rem;
+      background-color: $colorLight;
+      color: $colorDark;
+      border: 2px solid $colorDark;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .detailsArticle {
+    display: unset;
+    width: 100%;
+  }
+}

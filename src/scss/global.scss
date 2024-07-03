@@ -1,0 +1,27 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+//buttons
+.primaryButton {
+  background-color: $colorPrimary;
+  color: $colorLight;
+}
+.secondaryButton {
+  background-color: $colorDark;
+  color: $colorLight;
+}
+
+//utilities
+
+.highlight {
+  color: $colorPrimary;
+  //extended in components/main.scss -> .backgroundArticle
+}
+
+.center {
+  text-align: center;
+}
+
+span {
+  font-family: inherit;
+}

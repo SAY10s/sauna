@@ -1,0 +1,11 @@
+@use "../../mixins" as *;
+@use "../../variables" as *;
+
+.imageArticle {
+  width: 90%;
+  padding: 0rem;
+  img {
+    margin: 0;
+    padding: 0;
+  }
+}
