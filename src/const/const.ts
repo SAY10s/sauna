@@ -20,19 +20,19 @@ export const CURRENT_CONFIG_STEP_NAME_IN_ENGLISH = [
 const CONFIGURATION_OPTIONS_GLAZING = [
   {
     name: "Bezbarwna",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Bezbarwna",
   },
   {
     name: "Antisol Brązowy",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Antisol+Brązowy",
   },
   {
     name: "Antisol Grafitowy",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Antisol+Grafitowy",
   },
   {
     name: "Lustro Weneckie",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Lustro+Weneckie",
   },
 ];
 const CONFIGURATION_OPTIONS_FACADE = [
@@ -48,37 +48,37 @@ const CONFIGURATION_OPTIONS_FACADE = [
 const CONFIGURATION_OPTIONS_INTERIOR = [
   {
     name: "Bezbarwna",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Bezbarwna",
   },
   {
     name: "Antisol Brązowy",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Antisol+Brązowy",
   },
   {
     name: "Antisol Grafitowy",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Antisol+Grafitowy",
   },
   {
     name: "Lustro Weneckie",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Lustro+Weneckie",
   },
 ];
 const CONFIGURATION_OPTIONS_BENCH = [
   {
     name: "Bezbarwna",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Bezbarwna",
   },
   {
     name: "Antisol Brązowy",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Antisol+Brązowy",
   },
   {
     name: "Antisol Grafitowy",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Antisol+Grafitowy",
   },
   {
     name: "Lustro Weneckie",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Lustro+Weneckie",
   },
 ];
 const CONFIGURATION_OPTIONS_STOVE = [
@@ -94,19 +94,19 @@ const CONFIGURATION_OPTIONS_STOVE = [
 const CONFIGURATION_OPTIONS_LIGHTING = [
   {
     name: "Bezbarwna",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Bezbarwna",
   },
   {
     name: "Antisol Brązowy",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Antisol+Brązowy",
   },
   {
     name: "Antisol Grafitowy",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Antisol+Grafitowy",
   },
   {
     name: "Lustro Weneckie",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Lustro+Weneckie",
   },
 ];
 

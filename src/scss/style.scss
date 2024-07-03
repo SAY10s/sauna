@@ -43,6 +43,12 @@ button {
 }
 
 //TEMP
+.tempWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
 .imageSlider {
   padding: 5rem;
 }

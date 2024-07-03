@@ -15,8 +15,10 @@ const SaunaConfigurationView = () => {
 
   return (
     <div>
-      <NavBar />
-      <ImageSlider />
+      <div className="tempWrapper">
+        <ImageSlider />
+        <NavBar />
+      </div>
       <ConfigurationOfGivenStepWrapper
         configurationOptions={currentConfigOptions}
       />

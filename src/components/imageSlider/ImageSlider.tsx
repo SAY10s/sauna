@@ -13,6 +13,10 @@ const ImageSlider = () => {
     <div className="imageSlider">
       <h4>Opcja:</h4>
       <h3>{currentConfigStepNameInPolish}</h3>
+      <img
+        src="https://placehold.co/256"
+        alt="Zdjęcie obecnie wybranej opcji w danym kroku"
+      />
     </div>
   );
 };
