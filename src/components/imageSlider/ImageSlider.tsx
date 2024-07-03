@@ -9,7 +9,7 @@ const ImageSlider = () => {
   const currentConfigStepId = useSelector(
     (state: RootState) => state.saunaConfig.currentConfigStepId,
   );
-  const currentChoosenOption = useSelector(
+  const currentChosenOption = useSelector(
     (state: RootState) =>
       state.saunaConfig[
         CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[currentConfigStepId]
@@ -19,7 +19,7 @@ const ImageSlider = () => {
   const currentConfigStepNameInPolish =
     CURRENT_CONFIG_STEP_NAME_IN_POLISH[currentConfigStepId];
 
-  const imgURL = `https://placehold.co/256?text=${currentConfigStepNameInPolish}:+${currentChoosenOption}`;
+  const imgURL = `https://placehold.co/256?text=${currentConfigStepNameInPolish}:+${currentChosenOption}`;
 
   return (
     <div className="imageSlider">

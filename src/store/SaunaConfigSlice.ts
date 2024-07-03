@@ -36,6 +36,9 @@ const SaunaConfigSlice = createSlice({
   name: "saunaConfig",
   initialState,
   reducers: {
+    setModel: (state, action: PayloadAction<string>) => {
+      state.model = action.payload;
+    },
     setGlazing: (state, action: PayloadAction<string>) => {
       state.glazing = action.payload;
     },
@@ -69,6 +72,7 @@ const SaunaConfigSlice = createSlice({
 });
 
 export const {
+  setModel,
   setGlazing,
   setBench,
   setInteriorFinish,

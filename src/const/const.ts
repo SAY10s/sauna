@@ -1,5 +1,6 @@
 export const CURRENT_CONFIG_STEP_NAME_IN_POLISH = [
   "model",
+  "przeszklenie",
   "elewacja",
   "Wykończenie wewnętrzne",
   "ławka",
@@ -8,16 +9,37 @@ export const CURRENT_CONFIG_STEP_NAME_IN_POLISH = [
   "akcesoria",
   "podsumowanie",
 ];
+
+//it's also a name of the key in the state object
 export const CURRENT_CONFIG_STEP_NAME_IN_ENGLISH = [
   "model",
   "glazing",
   "facade",
-  "interior",
+  "interiorFinish",
   "bench",
   "stove",
   "lighting",
   "accessories",
   "summary",
+];
+
+const CONFIGURATION_OPTIONS_MODEL = [
+  {
+    name: "Model 1",
+    image: "https://placehold.co/64?text=Model+1",
+  },
+  {
+    name: "Model 2",
+    image: "https://placehold.co/64?text=Model+2",
+  },
+  {
+    name: "Model 3",
+    image: "https://placehold.co/64?text=Model+3",
+  },
+  {
+    name: "Model 4",
+    image: "https://placehold.co/64?text=Model+4",
+  },
 ];
 
 const CONFIGURATION_OPTIONS_GLAZING = [
@@ -113,12 +135,24 @@ const CONFIGURATION_OPTIONS_LIGHTING = [
   },
 ];
 
+const CONFIGURATION_OPTIONS_ACCESSORIES = [
+  {
+    name: "Ręcznik TIKKA",
+    image: "https://placehold.co/64?text=Ręcznik",
+  },
+  {
+    name: "Bez akcesoriów",
+    image: "https://placehold.co/64?text=-",
+  },
+];
+
 export const CONFIGURATION_OPTIONS = [
+  CONFIGURATION_OPTIONS_MODEL,
   CONFIGURATION_OPTIONS_GLAZING,
   CONFIGURATION_OPTIONS_FACADE,
   CONFIGURATION_OPTIONS_INTERIOR,
   CONFIGURATION_OPTIONS_BENCH,
   CONFIGURATION_OPTIONS_STOVE,
   CONFIGURATION_OPTIONS_LIGHTING,
-  CONFIGURATION_OPTIONS_GLAZING,
+  CONFIGURATION_OPTIONS_ACCESSORIES,
 ];

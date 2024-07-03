@@ -4,7 +4,7 @@ import { RootState } from "../../store/store.ts";
 import { CURRENT_CONFIG_STEP_NAME_IN_POLISH } from "../../const/const.ts";
 
 const NavBar = () => {
-  const choosenConfig = useSelector((state: RootState) => state.saunaConfig);
+  const chosenConfig = useSelector((state: RootState) => state.saunaConfig);
 
   const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <div>
       {CURRENT_CONFIG_STEP_NAME_IN_POLISH.map((step, index) => {
-        if (index === choosenConfig.currentConfigStepId)
+        if (index === chosenConfig.currentConfigStepId)
           return (
             <div key={index}>
               <h3>{step}</h3>
@@ -27,7 +27,7 @@ const NavBar = () => {
         else return <div key={index}>{step}</div>;
       })}
       <br />
-      {Object.entries(choosenConfig).map(([key, value], index) => {
+      {Object.entries(chosenConfig).map(([key, value], index) => {
         if (value !== null && key !== "currentConfigStepId") {
           return <div key={index}>{`${key}: ${value}`}</div>;
         }
