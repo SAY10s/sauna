@@ -9,6 +9,7 @@ export const CURRENT_CONFIG_STEP_NAME_IN_POLISH = [
 ];
 export const CURRENT_CONFIG_STEP_NAME_IN_ENGLISH = [
   "model",
+  "glazing",
   "facade",
   "interior",
   "bench",

@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface SaunaConfigStateInterface {
+  [key: string]: string | null | number;
+
   currentConfigStepId: number;
 
   model: string | null;
@@ -20,7 +22,7 @@ const initialState: SaunaConfigStateInterface = {
 
   model: "Model 1",
 
-  glazing: null,
+  glazing: "pink",
   facade: null,
   interiorFinish: null,
   bench: null,
