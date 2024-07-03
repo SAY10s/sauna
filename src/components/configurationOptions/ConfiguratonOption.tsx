@@ -1,16 +1,13 @@
 interface PropsInterface {
   name: string;
-  backgroundImage: string;
+  image: string;
 }
 
-const ConfiguratonOption: React.FC<PropsInterface> = ({
-  name,
-  backgroundImage,
-}) => {
+const ConfiguratonOption: React.FC<PropsInterface> = ({ name, image }) => {
   return (
-    <div>
+    <div className="configurationOption">
       <h4>{name}</h4>
-      <img src={backgroundImage} alt={name} />
+      <img src={image} alt={name} />
     </div>
   );
 };

@@ -1,19 +1,21 @@
+import ConfiguratonOption from "./ConfiguratonOption.tsx";
+
 interface PropsInterface {
-  configurationOptions: { name: string; backgroundImage: string }[];
+  configurationOptions: { name: string; image: string }[];
 }
 
 const ConfigurationOfGivenStepWrapper: React.FC<PropsInterface> = ({
   configurationOptions,
 }) => {
   return (
-    <div>
-      <h4>Configuration Of Given Step Wrapper</h4>
+    <div className="configurationOfGivenStepWrapper">
       {configurationOptions.map((option, index) => {
         return (
-          <div key={index}>
-            <h4>{option.name}</h4>
-            <img src={option.backgroundImage} alt={option.name} />
-          </div>
+          <ConfiguratonOption
+            name={option.name}
+            image={option.image}
+            key={index}
+          />
         );
       })}
     </div>

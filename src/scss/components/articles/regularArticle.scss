@@ -1,6 +1,0 @@
-@use "../../mixins" as *;
-@use "../../variables" as *;
-
-.regularArticle:not(:first-child) {
-  margin-top: 2.5rem;
-}

@@ -2,10 +2,10 @@
 @use "./mixins" as *;
 
 // components
-@use "./components/footer" as *;
-@use "./components/header" as *;
-@use "./components/main" as *;
-@use "./components/nav" as *;
+//@use "./components/footer" as *;
+//@use "./components/header" as *;
+//@use "./components/main" as *;
+//@use "./components/nav" as *;
 
 // global styles
 @use "./global" as *;
@@ -45,4 +45,17 @@ button {
 //TEMP
 .imageSlider {
   padding: 5rem;
+}
+
+.configurationOfGivenStepWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.configurationOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 }
