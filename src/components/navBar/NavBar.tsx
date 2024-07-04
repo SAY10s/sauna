@@ -29,7 +29,7 @@ const NavBar = () => {
       <br />
       {Object.entries(saunaConfig).map(([key, value], index) => {
         if (value !== null && key !== "currentConfigStepId") {
-          return <span key={index}>{`${value}`} </span>;
+          return <div key={index}>{`${value}`} </div>;
         }
       })}
       <br />

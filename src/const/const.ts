@@ -63,11 +63,11 @@ const CONFIGURATION_OPTIONS_GLAZING = [
 const CONFIGURATION_OPTIONS_FACADE = [
   {
     name: "Blacha T-12",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Blacka+T-12",
   },
   {
     name: "Marmur",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Marmur",
   },
 ];
 const CONFIGURATION_OPTIONS_INTERIOR = [
@@ -109,11 +109,11 @@ const CONFIGURATION_OPTIONS_BENCH = [
 const CONFIGURATION_OPTIONS_STOVE = [
   {
     name: "Blacha T-12",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Blacka+T-12",
   },
   {
     name: "Marmur",
-    image: "https://placehold.co/64",
+    image: "https://placehold.co/64?text=Marmur",
   },
 ];
 const CONFIGURATION_OPTIONS_LIGHTING = [

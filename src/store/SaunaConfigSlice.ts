@@ -37,14 +37,14 @@ const initialState: SaunaConfigStateInterface = {
 
   model: "Model 1",
 
-  glazing: "pink",
-  facade: "red",
-  interiorFinish: "green",
-  bench: "blue!",
-  stove: "silly",
-  lighting: "shiny",
+  glazing: "Lustro Weneckie",
+  facade: "Blacha T-12",
+  interiorFinish: "Antisol Brązowy",
+  bench: "Antisol Grafitowy",
+  stove: "Marmur",
+  lighting: "Antisol Grafitowy",
 
-  accessories: "none",
+  accessories: "Bez akcesoriów",
 };
 
 const SaunaConfigSlice = createSlice({
