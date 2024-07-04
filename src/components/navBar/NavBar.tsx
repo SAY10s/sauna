@@ -27,49 +27,86 @@ const NavBar = () => {
 
   return (
     <nav className="navBarWrapper">
-      {CURRENT_CONFIG_STEP_NAME_IN_POLISH.map((step, index) => {
-        if (index === saunaConfig.currentConfigStepId)
-          return (
-            <div key={index}>
-              <h3>{step}</h3>
-            </div>
-          );
-        else if (
-          saunaConfig[CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[index]] !== null &&
-          step !== "podsumowanie"
-        )
-          return (
-            <div
-              key={index}
-              onClick={() => {
-                handleStepChoice(index);
-              }}
-            >
-              {step} &#10003;
-            </div>
-          );
-        else
-          return (
-            <div
-              key={index}
-              onClick={() => {
-                handleStepChoice(index);
-              }}
-            >
-              {step}
-            </div>
-          );
-      })}
-      <br />
-      {Object.entries(saunaConfig).map(([key, value], index) => {
-        if (value !== null && key !== "currentConfigStepId") {
-          return <div key={index}>{`${value}`} </div>;
-        }
-      })}
-      <br />
-      <button onClick={handlePreviousStep}>Wróć</button>
-      <br />
-      <button onClick={handleNextStep}>Dalej</button>
+      <div className="optionsAndChosenOptionsWrapper">
+        <div className="optionsWrapper">
+          {CURRENT_CONFIG_STEP_NAME_IN_POLISH.map((step, index) => {
+            if (index === saunaConfig.currentConfigStepId)
+              return (
+                <div key={index} className="active">
+                  {step}
+                </div>
+              );
+            else if (
+              saunaConfig[CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[index]] !==
+                null &&
+              step !== "podsumowanie"
+            )
+              return (
+                <div
+                  key={index}
+                  onClick={() => {
+                    handleStepChoice(index);
+                  }}
+                >
+                  {step} &#10003;
+                </div>
+              );
+            else
+              return (
+                <div
+                  key={index}
+                  onClick={() => {
+                    handleStepChoice(index);
+                  }}
+                >
+                  {step}
+                </div>
+              );
+          })}
+        </div>
+        <div className="chosenOptions">
+          <div className="model">
+            {saunaConfig.model !== null ? `${saunaConfig.model}` : ""}
+          </div>
+          <div className="bold">Wybrane Opcje:</div>
+          <div className="chosenOptionsBoxElements">
+            {Object.entries(saunaConfig).map(([key, value], index) => {
+              if (
+                value !== null &&
+                key !== "currentConfigStepId" &&
+                key !== "model" &&
+                key !== "accessories"
+              ) {
+                return (
+                  <div key={index} className="chosenOption">
+                    <div> {`${value}`}</div>
+                    <div>&#10005;</div>
+                  </div>
+                );
+              }
+              if (key === "accessories") {
+                if (Array.isArray(value) && value.length > 0)
+                  return value.map((accessory, index) => {
+                    return (
+                      <div key={index} className="chosenOption">
+                        <div> {`${accessory}`}</div>
+                        <div>&#10005;</div>
+                      </div>
+                    );
+                  });
+              }
+            })}
+          </div>
+        </div>
+      </div>
+      <div className="buttonWrapper">
+        <div className="price">
+          <div>Cena konfiguracji:</div>
+          <div>37 000,00zł</div>
+        </div>
+        <button onClick={handlePreviousStep}>Wróć</button>
+        <button onClick={handleNextStep}>Dalej</button>
+      </div>
     </nav>
   );
 };
