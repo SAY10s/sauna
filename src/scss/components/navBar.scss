@@ -114,5 +114,28 @@
   .navBarWrapper {
     background-color: $colorLight;
     color: $colorDark;
+    .optionsWrapper {
+      display: flex;
+      overflow: scroll;
+      font-weight: bold;
+      div {
+        margin: 1rem;
+        text-transform: capitalize;
+        white-space: nowrap;
+      }
+      .active {
+        position: relative;
+      }
+      .active:after {
+        bottom: 0;
+        left: 0;
+        content: "";
+        position: absolute;
+        border-bottom: 3px solid $colorPrimary;
+        background-color: #3c9c3c;
+        width: 100%;
+        z-index: 5;
+      }
+    }
   }
 }

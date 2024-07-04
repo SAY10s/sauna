@@ -50,9 +50,10 @@ span {
   display: grid;
   grid-template-columns: 65% 35%;
 }
-
-.hideOnMobile {
-  display: none;
+@media only screen and (max-width: 600px) {
+  .hideOnMobile {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 600px) {

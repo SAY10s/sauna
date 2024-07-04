@@ -64,9 +64,6 @@ const ConfigurationSummaryWrapper = () => {
         {accessories.length > 0 && (
           <div className="summaryAccessoriesWrapper">
             {accessories.map((accessory, index) => {
-              // const accessoryDetails = CONFIGURATION_OPTIONS[7].find(
-              //   (option) => option.name === accessory,
-              // );
               return (
                 <SummaryOption
                   key={`accessory-${index}`}

@@ -48,7 +48,7 @@ const NavBar = () => {
                     handleStepChoice(index);
                   }}
                 >
-                  {step} &#10003;
+                  {step} <span className="hideOnMobile">&#10003;</span>
                 </div>
               );
             else
@@ -99,8 +99,8 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      <div className="buttonWrapper">
-        <div className="price">
+      <div className="buttonWrapper hideOnMobile">
+        <div className="price ">
           <div>Cena konfiguracji:</div>
           <div>37 000,00zł</div>
         </div>
