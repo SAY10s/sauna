@@ -2,7 +2,7 @@ import ImageSlider from "./ImageSlider.tsx";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store.ts";
 import {
-  CURRENT_CONFIG_STEP_NAME_IN_ENGLISH,
+  CONFIGURATION_OPTIONS,
   CURRENT_CONFIG_STEP_NAME_IN_POLISH,
 } from "../../const/const.ts";
 
@@ -10,20 +10,17 @@ const ImageSliderWrapper = () => {
   const currentConfigStepId = useSelector(
     (state: RootState) => state.saunaConfig.currentConfigStepId,
   );
-  const currentChosenOption = useSelector(
-    (state: RootState) =>
-      state.saunaConfig[
-        CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[currentConfigStepId]
-      ],
-  );
+
   const chosenModel = useSelector(
     (state: RootState) => state.saunaConfig.model,
   );
 
   const currentConfigStepNameInPolish =
     CURRENT_CONFIG_STEP_NAME_IN_POLISH[currentConfigStepId];
+  const currentStepOptions = CONFIGURATION_OPTIONS[currentConfigStepId];
 
-  const imgURL = `https://placehold.co/256?text=${currentConfigStepNameInPolish}:+${currentChosenOption}`;
+  const imgURLs = currentStepOptions.map((option) => option.image);
+
   return (
     <div className="imageSliderWrapper grid65to35">
       {currentConfigStepId === 8 ? (
@@ -32,7 +29,7 @@ const ImageSliderWrapper = () => {
             <h4>Podsumowanie:</h4>
             <h1>{chosenModel}</h1>
           </div>
-          <ImageSlider imgURL={imgURL} />
+          <ImageSlider imgURLs={imgURLs} />
         </div>
       ) : (
         <div className="innerSliderElementWrapper">
@@ -40,7 +37,7 @@ const ImageSliderWrapper = () => {
             <h4>Opcja:</h4>
             <h1>{currentConfigStepNameInPolish}</h1>
           </div>
-          <ImageSlider imgURL={imgURL} />
+          <ImageSlider imgURLs={imgURLs} />
         </div>
       )}
     </div>
