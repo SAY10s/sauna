@@ -57,9 +57,36 @@
 }
 @media only screen and (max-width: 600px) {
   .summaryWrapper {
+    padding: 2rem;
     .summaryOptionsWrapper,
     .summaryAccessoriesWrapper {
       grid-template-columns: repeat(1, 1fr);
+      gap: 0.5rem;
+      .stepName {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: $colorPrimary;
+        font-weight: bolder;
+      }
+      .summaryOption {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          height: 2rem;
+          width: 2rem;
+          margin-right: 1rem;
+        }
+        h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      text-align: center;
+      margin: 0;
     }
   }
 }

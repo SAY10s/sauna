@@ -33,21 +33,33 @@ const SummaryOption: React.FC<PropsInterface> = ({
     const option = options.find((option) => option.name === name);
 
     return (
-      <div className="summaryOption">
-        <img src={option?.image} alt={name} />
-        <h6>{stepNameInPolish}</h6>
-        <h3>{name}</h3>
-        <button onClick={handleChoosingStep}>Zmień &rarr;</button>
-      </div>
+      <>
+        <div className="stepName">{stepNameInPolish}</div>
+
+        <div className="summaryOption">
+          <img src={option?.image} alt={name} />
+          <h6 className="hideOnMobile">{stepNameInPolish}</h6>
+          <h3>{name}</h3>
+          <button onClick={handleChoosingStep} className="hideOnMobile">
+            Zmień &rarr;
+          </button>
+        </div>
+      </>
     );
   } else {
     return (
-      <div className="summaryOption">
-        <img src="https://placehold.co/64?text=-" alt={name} />
-        <h6>{stepNameInPolish}</h6>
-        <h3>{name}</h3>
-        <button onClick={handleChoosingStep}>Wybierz &rarr;</button>
-      </div>
+      <>
+        <div className="stepName">{stepNameInPolish}</div>
+
+        <div className="summaryOption">
+          <img src="https://placehold.co/64?text=-" alt={name} />
+          <h6 className="hideOnMobile">{stepNameInPolish}</h6>
+          <h3>{name}</h3>
+          <button onClick={handleChoosingStep} className="hideOnMobile">
+            Wybierz &rarr;
+          </button>
+        </div>
+      </>
     );
   }
 };
