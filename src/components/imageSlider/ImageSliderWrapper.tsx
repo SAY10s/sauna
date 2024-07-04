@@ -27,14 +27,14 @@ const ImageSliderWrapper = () => {
       {currentConfigStepId === 8 ? (
         <div className="innerSliderElementWrapper">
           <div className="currentStep">
-            <h4>Podsumowanie:</h4>
+            <h4 className="hideOnMobile">Podsumowanie:</h4>
             <h1>{chosenModel}</h1>
           </div>
           <ImageSlider imgURLs={imgURLs} />
         </div>
       ) : (
         <div className="innerSliderElementWrapper">
-          <div className="currentStep">
+          <div className="currentStep hideOnMobile">
             <h4>Opcja:</h4>
             <h1>{currentConfigStepNameInPolish}</h1>
           </div>

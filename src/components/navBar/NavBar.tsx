@@ -64,7 +64,7 @@ const NavBar = () => {
               );
           })}
         </div>
-        <div className="chosenOptions">
+        <div className="chosenOptions hideOnMobile">
           <div className="model">
             {saunaConfig.model !== null ? `${saunaConfig.model}` : ""}
           </div>
