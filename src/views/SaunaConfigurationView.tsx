@@ -35,7 +35,16 @@ const SaunaConfigurationView = () => {
       <div className="imageSliderAndNavBarWrapper">
         <ImageSliderWrapper />
         <NavBar />
-      </div>
+      </div>{" "}
+      {currentConfigStepId === 8 ? (
+        <div className="sliderSummary">
+          <div className="inner">
+            <div className="text">Cena widocznej konfiguracji</div>
+            <div className="save">Zapisz konfigurację</div>
+            <div className="price">37 000,00zł</div>
+          </div>
+        </div>
+      ) : null}
       {StepComponentContent}
     </main>
   );
