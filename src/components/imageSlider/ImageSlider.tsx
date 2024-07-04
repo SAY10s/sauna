@@ -50,11 +50,21 @@ const ImageSlider: React.FC<PropsInter> = ({ imgURLs }) => {
   };
 
   return (
-    <div className="imageSlider">
-      <button onClick={goToPrevious}>&lt;</button>
-      <img src={imgURLs[currentIndex]} alt={`Slide ${currentIndex}`} />
-      <button onClick={goToNext}>&gt;</button>
-    </div>
+    <>
+      <div className="imageSlider">
+        <button onClick={goToPrevious}>&lt;</button>
+        <img src={imgURLs[currentIndex]} alt={`Slide ${currentIndex}`} />
+        <button onClick={goToNext}>&gt;</button>
+      </div>
+      <div className="slideIndicators">
+        {imgURLs.map((_, index) => (
+          <div
+            key={index}
+            className={`indicator ${currentIndex === index ? "active" : ""}`}
+          ></div>
+        ))}
+      </div>
+    </>
   );
 };
 
