@@ -10,7 +10,7 @@
   }
   .innerSliderElementWrapper {
     @include flex(column, flex-start, flex-start);
-    padding: 3rem 6rem;
+    padding: 3rem 7rem;
 
     .imageSlider {
       @include flex(row, center, center);

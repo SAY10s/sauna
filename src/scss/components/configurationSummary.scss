@@ -1,2 +1,57 @@
 @use "../variables" as *;
 @use "../mixins" as *;
+
+.summaryWrapper {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+  .accessoriesHeader {
+    margin-top: 10rem;
+  }
+
+  padding: 3rem 7rem;
+
+  .summaryOptionsWrapper,
+  .summaryAccessoriesWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 2rem;
+    row-gap: 5rem;
+
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+
+    .summaryOption {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 1.5rem;
+      color: $colorDark;
+      img {
+        width: 100%;
+        height: 9rem;
+        object-fit: cover;
+      }
+      h6 {
+        margin-top: 0.5rem;
+        font-family: $primaryFont;
+        font-weight: 400;
+        font-size: 1.25rem;
+      }
+      button {
+        background-color: transparent;
+        border: unset;
+        padding: 0.5rem 0;
+        text-align: left;
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

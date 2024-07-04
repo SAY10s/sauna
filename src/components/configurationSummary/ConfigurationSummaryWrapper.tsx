@@ -22,8 +22,8 @@ const ConfigurationSummaryWrapper = () => {
 
   return (
     <div className="grid65to35">
-      <div className="tempWrapper summaryWrapper">
-        <h2>Podsumowanie konfiguracji</h2>
+      <div className="summaryWrapper">
+        <h1>Twoja konfiguracja</h1>
         <div className="summaryOptionsWrapper">
           {stepNamesInPolish.map((step, index) => {
             //skip the "model" step (model is shown in the image slider)
@@ -58,7 +58,8 @@ const ConfigurationSummaryWrapper = () => {
             return null;
           })}
         </div>
-        <h2>Akcesoria</h2>
+
+        <h1 className="accessoriesHeader">Akcesoria</h1>
 
         {accessories.length > 0 && (
           <div className="summaryAccessoriesWrapper">

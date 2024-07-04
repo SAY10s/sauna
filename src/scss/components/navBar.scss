@@ -57,14 +57,14 @@
     .chosenOptionsBoxElements {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.5rem;
       .chosenOption {
         @include flex-row-center;
         div:first-child {
           background-color: #3c9c3c;
         }
         div {
-          padding: 0.45rem;
+          padding: 0.2rem 0.45rem;
         }
       }
     }

@@ -33,19 +33,19 @@ const SummaryOption: React.FC<PropsInterface> = ({
     const option = options.find((option) => option.name === name);
 
     return (
-      <div>
+      <div className="summaryOption">
         <img src={option?.image} alt={name} />
         <h6>{stepNameInPolish}</h6>
-        <h4>{name}</h4>
+        <h3>{name}</h3>
         <button onClick={handleChoosingStep}>Zmień &rarr;</button>
       </div>
     );
   } else {
     return (
-      <div>
+      <div className="summaryOption">
         <img src="https://placehold.co/64?text=-" alt={name} />
         <h6>{stepNameInPolish}</h6>
-        <h4>{name}</h4>
+        <h3>{name}</h3>
         <button onClick={handleChoosingStep}>Wybierz &rarr;</button>
       </div>
     );
