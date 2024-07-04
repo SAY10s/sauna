@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store.ts";
-import { CURRENT_CONFIG_STEP_NAME_IN_ENGLISH } from "../../const/const.ts";
+import {
+  CONFIGURATION_OPTIONS,
+  CURRENT_CONFIG_STEP_NAME_IN_ENGLISH,
+} from "../../const/const.ts";
 
 interface PropsInter {
   imgURLs: string[];
@@ -19,6 +22,22 @@ const ImageSlider: React.FC<PropsInter> = ({ imgURLs }) => {
   );
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentConfigStepId !== 8) {
+      const currentStepOptions = CONFIGURATION_OPTIONS[currentConfigStepId];
+      const chosenOptionObject = currentStepOptions.find(
+        (option) => option.name === currentChosenOption,
+      );
+      const chosenOptionImageUrl = chosenOptionObject
+        ? chosenOptionObject.image
+        : null;
+      const newIndex = imgURLs.findIndex((url) => url === chosenOptionImageUrl);
+      if (newIndex !== -1) {
+        setCurrentIndex(newIndex);
+      }
+    }
+  }, [currentChosenOption, imgURLs, currentConfigStepId]);
 
   const goToNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % imgURLs.length);

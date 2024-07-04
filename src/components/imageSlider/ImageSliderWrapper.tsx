@@ -17,8 +17,9 @@ const ImageSliderWrapper = () => {
 
   const currentConfigStepNameInPolish =
     CURRENT_CONFIG_STEP_NAME_IN_POLISH[currentConfigStepId];
-  const currentStepOptions = CONFIGURATION_OPTIONS[currentConfigStepId];
+  let currentStepOptions = CONFIGURATION_OPTIONS[currentConfigStepId];
 
+  if (currentConfigStepId === 8) currentStepOptions = CONFIGURATION_OPTIONS[0];
   const imgURLs = currentStepOptions.map((option) => option.image);
 
   return (
