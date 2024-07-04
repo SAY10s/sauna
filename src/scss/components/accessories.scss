@@ -1,0 +1,22 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.summaryWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+
+  .summaryOptionsWrapper,
+  .summaryAccessoriesWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 1rem;
+    width: 100%;
+
+    background-color: #e71408;
+    div {
+      background-color: palegreen;
+    }
+  }
+}

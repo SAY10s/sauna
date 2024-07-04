@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface SaunaConfigStateInterface {
-  [key: string]: string | null | number;
+  [key: string]: string | null | number | string[];
 
   currentConfigStepId: number;
 
@@ -14,11 +14,11 @@ export interface SaunaConfigStateInterface {
   stove: string | null;
   lighting: string | null;
 
-  accessories: string | null;
+  accessories: string[];
 }
 
 const initialState: SaunaConfigStateInterface = {
-  currentConfigStepId: 1,
+  currentConfigStepId: 7,
 
   model: "Model 1",
 
@@ -29,7 +29,7 @@ const initialState: SaunaConfigStateInterface = {
   stove: null,
   lighting: null,
 
-  accessories: null,
+  accessories: [],
 };
 
 // const initialState: SaunaConfigStateInterface = {
@@ -73,8 +73,13 @@ const SaunaConfigSlice = createSlice({
       state.lighting = action.payload;
     },
 
-    setAccessories: (state, action: PayloadAction<string>) => {
-      state.accessories = action.payload;
+    addAccessory: (state, action: PayloadAction<string>) => {
+      state.accessories.push(action.payload);
+    },
+    removeAccessory: (state, action: PayloadAction<string>) => {
+      state.accessories = state.accessories.filter(
+        (accessory) => accessory !== action.payload,
+      );
     },
 
     nextStep: (state) => {
@@ -97,7 +102,8 @@ export const {
   setStove,
   setLighting,
   setFacade,
-  setAccessories,
+  addAccessory,
+  removeAccessory,
   nextStep,
   previousStep,
   chooseStep,

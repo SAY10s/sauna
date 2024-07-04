@@ -8,7 +8,6 @@ import {
   setBench,
   setStove,
   setLighting,
-  setAccessories,
 } from "../../store/SaunaConfigSlice.ts";
 import { CURRENT_CONFIG_STEP_NAME_IN_ENGLISH } from "../../const/const.ts";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
@@ -25,7 +24,6 @@ interface ActionCreatorsMap {
   bench: ActionCreatorWithPayload<string, "saunaConfig/setBench">;
   stove: ActionCreatorWithPayload<string, "saunaConfig/setStove">;
   lighting: ActionCreatorWithPayload<string, "saunaConfig/setLighting">;
-  accessories: ActionCreatorWithPayload<string, "saunaConfig/setAccessories">;
 }
 
 interface PropsInterface {
@@ -52,7 +50,6 @@ const ConfigurationOption: React.FC<PropsInterface> = ({ name, image }) => {
     bench: setBench,
     stove: setStove,
     lighting: setLighting,
-    accessories: setAccessories,
   };
 
   const handleOptionClick = () => {

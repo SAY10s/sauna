@@ -141,8 +141,12 @@ const CONFIGURATION_OPTIONS_ACCESSORIES = [
     image: "https://placehold.co/64?text=Ręcznik",
   },
   {
-    name: "Bez akcesoriów",
-    image: "https://placehold.co/64?text=-",
+    name: "Klapki TIKKA",
+    image: "https://placehold.co/64?text=Klapki",
+  },
+  {
+    name: "Bidon SportGo",
+    image: "https://placehold.co/64?text=Bidon",
   },
 ];
 
