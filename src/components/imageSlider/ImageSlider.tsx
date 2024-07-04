@@ -1,30 +1,12 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store.ts";
-import {
-  CURRENT_CONFIG_STEP_NAME_IN_ENGLISH,
-  CURRENT_CONFIG_STEP_NAME_IN_POLISH,
-} from "../../const/const.ts";
+import React from "react";
 
-const ImageSlider = () => {
-  const currentConfigStepId = useSelector(
-    (state: RootState) => state.saunaConfig.currentConfigStepId,
-  );
-  const currentChosenOption = useSelector(
-    (state: RootState) =>
-      state.saunaConfig[
-        CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[currentConfigStepId]
-      ],
-  );
+interface PropsInterface {
+  imgURL: string;
+}
 
-  const currentConfigStepNameInPolish =
-    CURRENT_CONFIG_STEP_NAME_IN_POLISH[currentConfigStepId];
-
-  const imgURL = `https://placehold.co/256?text=${currentConfigStepNameInPolish}:+${currentChosenOption}`;
-
+const ImageSlider: React.FC<PropsInterface> = ({ imgURL }) => {
   return (
     <div className="imageSlider">
-      <h4>Opcja:</h4>
-      <h3>{currentConfigStepNameInPolish}</h3>
       <img src={imgURL} alt="Zdjęcie obecnie wybranej opcji w danym kroku" />
     </div>
   );
