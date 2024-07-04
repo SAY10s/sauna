@@ -25,3 +25,7 @@ span {
   background-color: $colorSecondaryDark;
   color: $colorLight;
 }
+.grid65to35 {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}

@@ -10,3 +10,7 @@
 @mixin flex-row-center {
   @include flex(row, center, center);
 }
+@mixin grid65to35 {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}

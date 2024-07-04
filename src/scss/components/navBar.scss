@@ -2,6 +2,23 @@
 @use "../mixins" as *;
 
 .navBarWrapper {
+  position: fixed;
+  top: 0;
+
+  right: 6%;
+  width: 29%;
+  height: 100vh;
+
   display: flex;
-  background-color: #e71408;
+  flex-direction: column;
+
+  background-image: linear-gradient(
+    to top right,
+    $colorSecondary 50%,
+    $colorPrimary 50%
+  );
+
+  color: $colorLight;
+
+  overflow: hidden;
 }

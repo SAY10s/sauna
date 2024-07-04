@@ -1,53 +1,44 @@
-import ImageSlider from "../components/imageSlider/ImageSlider.tsx";
-import NavBar from "../components/navBar/NavBar.tsx";
-import ConfigurationOfGivenStepWrapper from "../components/configurationOptions/ConfigurationOfGivenStepWrapper.tsx";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store.ts";
 import { CONFIGURATION_OPTIONS } from "../const/const.ts";
+import NavBar from "../components/navBar/NavBar.tsx";
+import ConfigurationOfGivenStepWrapper from "../components/configurationOptions/ConfigurationOfGivenStepWrapper.tsx";
 import ConfigurationSummaryWrapper from "../components/configurationSummary/ConfigurationSummaryWrapper.tsx";
 import ChooseAccessories from "../components/accessories/ChooseAccessories.tsx";
+import ImageSliderWrapper from "../components/imageSlider/ImageSliderWrapper.tsx";
 
 const SaunaConfigurationView = () => {
   const currentConfigStepId = useSelector(
     (state: RootState) => state.saunaConfig.currentConfigStepId,
   );
-
-  //TEMPORARY
   const currentConfigOptions = CONFIGURATION_OPTIONS[currentConfigStepId];
 
+  let StepComponentContent;
+
+  //check if we are in Config, Accessories or Summary step
   if (currentConfigStepId < 7) {
-    return (
-      <div>
-        <div className="tempWrapper">
-          <ImageSlider />
-          <NavBar />
-        </div>
-        <ConfigurationOfGivenStepWrapper
-          configurationOptions={currentConfigOptions}
-        />
-      </div>
+    StepComponentContent = (
+      <ConfigurationOfGivenStepWrapper
+        configurationOptions={currentConfigOptions}
+      />
     );
   } else if (currentConfigStepId === 7) {
-    return (
-      <div>
-        <div className="tempWrapper">
-          <ImageSlider />
-          <NavBar />
-        </div>
-        <ChooseAccessories configurationOptions={currentConfigOptions} />
-      </div>
+    StepComponentContent = (
+      <ChooseAccessories configurationOptions={currentConfigOptions} />
     );
   } else {
-    return (
-      <div>
-        <div className="tempWrapper">
-          <ImageSlider />
-          <NavBar />
-        </div>
-        <ConfigurationSummaryWrapper />
-      </div>
-    );
+    StepComponentContent = <ConfigurationSummaryWrapper />;
   }
+
+  return (
+    <main>
+      <div className="imageSliderAndNavBarWrapper">
+        <ImageSliderWrapper />
+        <NavBar />
+      </div>
+      {StepComponentContent}
+    </main>
+  );
 };
 
 export default SaunaConfigurationView;

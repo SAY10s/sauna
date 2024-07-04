@@ -21,62 +21,64 @@ const ConfigurationSummaryWrapper = () => {
   const accessories = saunaConfig.accessories || [];
 
   return (
-    <div className="tempWrapper summaryWrapper">
-      <h2>Podsumowanie konfiguracji</h2>
-      <div className="summaryOptionsWrapper">
-        {stepNamesInPolish.map((step, index) => {
-          //skip the "model" step (it's shown in the image slider)
-          if (index === 0) return null;
+    <div className="grid65to35">
+      <div className="tempWrapper summaryWrapper">
+        <h2>Podsumowanie konfiguracji</h2>
+        <div className="summaryOptionsWrapper">
+          {stepNamesInPolish.map((step, index) => {
+            //skip the "model" step (model is shown in the image slider)
+            if (index === 0) return null;
 
-          const stepValue = saunaConfig[step.english];
-          if (stepValue && step.polish !== "akcesoria") {
-            return (
-              <SummaryOption
-                key={index}
-                stepNameInPolish={step.polish}
-                stepNameInEnglish={step.english}
-                stepId={index}
-                name={stepValue.toString()}
-              />
-            );
-          } else if (
-            step.polish !== "podsumowanie" &&
-            step.polish !== "akcesoria"
-          ) {
-            return (
-              <SummaryOption
-                key={index}
-                stepNameInPolish={step.polish}
-                stepNameInEnglish={step.english}
-                stepId={index}
-                name="nie wybrano"
-                isSet={false}
-              />
-            );
-          }
-          return null;
-        })}
-      </div>
-      <h2>Akcesoria</h2>
-
-      {accessories.length > 0 && (
-        <div className="summaryAccessoriesWrapper">
-          {accessories.map((accessory, index) => {
-            // const accessoryDetails = CONFIGURATION_OPTIONS[7].find(
-            //   (option) => option.name === accessory,
-            // );
-            return (
-              <SummaryOption
-                key={`accessory-${index}`}
-                stepNameInPolish="Akcesoria"
-                stepNameInEnglish="accessories"
-                stepId={7}
-                name={accessory}
-              />
-            );
+            const stepValue = saunaConfig[step.english];
+            if (stepValue && step.polish !== "akcesoria") {
+              return (
+                <SummaryOption
+                  key={index}
+                  stepNameInPolish={step.polish}
+                  stepNameInEnglish={step.english}
+                  stepId={index}
+                  name={stepValue.toString()}
+                />
+              );
+            } else if (
+              step.polish !== "podsumowanie" &&
+              step.polish !== "akcesoria"
+            ) {
+              return (
+                <SummaryOption
+                  key={index}
+                  stepNameInPolish={step.polish}
+                  stepNameInEnglish={step.english}
+                  stepId={index}
+                  name="nie wybrano"
+                  isSet={false}
+                />
+              );
+            }
+            return null;
           })}
         </div>
-      )}
+        <h2>Akcesoria</h2>
+
+        {accessories.length > 0 && (
+          <div className="summaryAccessoriesWrapper">
+            {accessories.map((accessory, index) => {
+              // const accessoryDetails = CONFIGURATION_OPTIONS[7].find(
+              //   (option) => option.name === accessory,
+              // );
+              return (
+                <SummaryOption
+                  key={`accessory-${index}`}
+                  stepNameInPolish="Akcesoria"
+                  stepNameInEnglish="accessories"
+                  stepId={7}
+                  name={accessory}
+                />
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

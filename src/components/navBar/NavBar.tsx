@@ -26,7 +26,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navBarWrapper">
+    <nav className="navBarWrapper">
       {CURRENT_CONFIG_STEP_NAME_IN_POLISH.map((step, index) => {
         if (index === saunaConfig.currentConfigStepId)
           return (
@@ -70,7 +70,7 @@ const NavBar = () => {
       <button onClick={handlePreviousStep}>Wróć</button>
       <br />
       <button onClick={handleNextStep}>Dalej</button>
-    </div>
+    </nav>
   );
 };
 
