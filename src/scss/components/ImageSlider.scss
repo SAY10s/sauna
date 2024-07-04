@@ -6,6 +6,7 @@
   height: 100%;
 
   .currentStep {
+    width: 100%;
     color: $colorSecondary;
     text-transform: capitalize;
   }
@@ -83,7 +84,7 @@
       padding: 0;
       .imageSlider {
         img {
-          width: 100%;
+          width: 60%;
           margin-top: 2rem;
         }
       }
@@ -91,5 +92,10 @@
   }
   .slideIndicators {
     margin-bottom: 1rem;
+  }
+  .modelInSlider {
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
   }
 }

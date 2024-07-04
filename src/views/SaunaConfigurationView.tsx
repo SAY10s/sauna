@@ -37,7 +37,7 @@ const SaunaConfigurationView = () => {
         <NavBar />
       </div>{" "}
       {currentConfigStepId === 8 ? (
-        <div className="sliderSummary">
+        <div className="sliderSummary hideOnMobile">
           <div className="inner">
             <div className="text">Cena widocznej konfiguracji</div>
             <div className="save">Zapisz konfigurację</div>

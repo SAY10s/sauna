@@ -28,7 +28,7 @@ const ImageSliderWrapper = () => {
         <div className="innerSliderElementWrapper">
           <div className="currentStep">
             <h4 className="hideOnMobile">Podsumowanie:</h4>
-            <h1>{chosenModel}</h1>
+            <h1 className="modelInSlider">{chosenModel}</h1>
           </div>
           <ImageSlider imgURLs={imgURLs} />
         </div>
