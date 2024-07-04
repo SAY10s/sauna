@@ -7,6 +7,7 @@
 
   .currentStep {
     color: $colorSecondary;
+    text-transform: capitalize;
   }
   .innerSliderElementWrapper {
     @include flex(column, flex-start, flex-start);

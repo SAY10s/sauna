@@ -16,6 +16,9 @@ const ImageSliderWrapper = () => {
         CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[currentConfigStepId]
       ],
   );
+  const chosenModel = useSelector(
+    (state: RootState) => state.saunaConfig.model,
+  );
 
   const currentConfigStepNameInPolish =
     CURRENT_CONFIG_STEP_NAME_IN_POLISH[currentConfigStepId];
@@ -23,13 +26,23 @@ const ImageSliderWrapper = () => {
   const imgURL = `https://placehold.co/256?text=${currentConfigStepNameInPolish}:+${currentChosenOption}`;
   return (
     <div className="imageSliderWrapper grid65to35">
-      <div className="innerSliderElementWrapper">
-        <div className="currentStep">
-          <h4>Opcja:</h4>
-          <h1>{currentConfigStepNameInPolish}</h1>
+      {currentConfigStepId === 8 ? (
+        <div className="innerSliderElementWrapper">
+          <div className="currentStep">
+            <h4>Podsumowanie:</h4>
+            <h1>{chosenModel}</h1>
+          </div>
+          <ImageSlider imgURL={imgURL} />
         </div>
-        <ImageSlider imgURL={imgURL} />
-      </div>
+      ) : (
+        <div className="innerSliderElementWrapper">
+          <div className="currentStep">
+            <h4>Opcja:</h4>
+            <h1>{currentConfigStepNameInPolish}</h1>
+          </div>
+          <ImageSlider imgURL={imgURL} />
+        </div>
+      )}
     </div>
   );
 };
