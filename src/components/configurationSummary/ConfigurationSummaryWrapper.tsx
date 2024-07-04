@@ -35,6 +35,17 @@ const ConfigurationSummaryWrapper = () => {
               name={stepValue.toString()}
             />
           );
+        } else if (step.polish !== "podsumowanie") {
+          return (
+            <SummaryOption
+              key={index}
+              stepNameInPolish={step.polish}
+              stepNameInEnglish={step.english}
+              stepId={index}
+              name="nie wybrano"
+              isSet={false}
+            />
+          );
         }
         return null;
       })}

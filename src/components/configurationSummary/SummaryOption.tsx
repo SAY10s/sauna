@@ -10,6 +10,7 @@ interface PropsInterface {
   stepNameInEnglish: string; // Add this prop
   stepId: number;
   name: string;
+  isSet?: boolean;
 }
 
 const SummaryOption: React.FC<PropsInterface> = ({
@@ -17,26 +18,38 @@ const SummaryOption: React.FC<PropsInterface> = ({
   stepNameInEnglish,
   stepId,
   name,
+  isSet = true,
 }) => {
-  const stepIndex =
-    CURRENT_CONFIG_STEP_NAME_IN_ENGLISH.indexOf(stepNameInEnglish);
-  const options = CONFIGURATION_OPTIONS[stepIndex];
-  const option = options.find((option) => option.name === name);
-
   const dispatch = useDispatch();
-
   const handleChoosingStep = () => {
     dispatch(chooseStep(stepId));
   };
 
-  return (
-    <div>
-      <img src={option?.image} alt={name} />
-      <h6>{stepNameInPolish}</h6>
-      <h4>{name}</h4>
-      <button onClick={handleChoosingStep}>Zmień &rarr;</button>
-    </div>
-  );
+  if (isSet) {
+    const stepIndex =
+      CURRENT_CONFIG_STEP_NAME_IN_ENGLISH.indexOf(stepNameInEnglish);
+    const options = CONFIGURATION_OPTIONS[stepIndex];
+    console.table(options);
+    const option = options.find((option) => option.name === name);
+
+    return (
+      <div>
+        <img src={option?.image} alt={name} />
+        <h6>{stepNameInPolish}</h6>
+        <h4>{name}</h4>
+        <button onClick={handleChoosingStep}>Zmień &rarr;</button>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <img src="https://placehold.co/64?text=-" alt={name} />
+        <h6>{stepNameInPolish}</h6>
+        <h4>{name}</h4>
+        <button onClick={handleChoosingStep}>Wybierz &rarr;</button>
+      </div>
+    );
+  }
 };
 
 export default SummaryOption;
