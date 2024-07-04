@@ -3,24 +3,31 @@
 
 .configurationOfGivenStepWrapper {
   width: 100%;
+
   display: flex;
   justify-content: space-around;
+
   padding: 2rem;
 }
+
 .flexCenter70 {
   display: flex;
   justify-content: center;
   width: 70%;
+
   img {
     margin-bottom: 0.5rem;
   }
 }
+
 .configurationOption {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   padding: 1.5rem;
 }
+
 @media only screen and (max-width: 600px) {
   .flexCenter70 {
     display: flex;
@@ -28,14 +35,18 @@
     flex-wrap: wrap;
     width: 100%;
     overflow: hidden;
+
     img {
       margin-bottom: 0.5rem;
     }
+
     .configurationOption {
       width: 25%;
+
       img {
         width: 170%;
       }
+
       font-size: 1rem;
       text-align: center;
     }

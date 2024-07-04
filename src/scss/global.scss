@@ -21,6 +21,11 @@
 span {
   font-family: inherit;
 }
+.bold {
+  font-weight: bold;
+}
+
+//selected options
 .selected {
   position: relative;
 }
@@ -42,13 +47,20 @@ span {
     transform: translate(-50%, -50%);
   }
 }
-.bold {
-  font-weight: bold;
-}
+
+//grid that is used to divide the page into two parts (because of the unconventional nav menu on desktop)
 .grid65to35 {
   display: grid;
   grid-template-columns: 65% 35%;
 }
+@media only screen and (max-width: 600px) {
+  .grid65to35 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+//classes that hide elements
 @media only screen and (max-width: 600px) {
   .hideOnMobile {
     display: none;
@@ -57,12 +69,5 @@ span {
 @media only screen and (min-width: 600px) {
   .hideOnDesktop {
     display: none;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .grid65to35 {
-    display: flex;
-    flex-direction: column;
   }
 }

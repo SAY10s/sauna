@@ -6,11 +6,13 @@
   align-items: center;
   justify-content: space-between;
 
-  background-color: $colorLight;
-  padding: 2rem;
-  width: 100%;
   position: fixed;
   bottom: 0;
+  width: 100%;
+
+  padding: 2rem;
+
+  background-color: $colorLight;
 
   border-top: 1px solid lightgrey;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
@@ -25,13 +27,16 @@
       font-weight: bolder;
     }
   }
+
   button {
-    background-color: $colorPrimary;
-    color: $colorLight;
+    margin-left: 2rem;
     padding: 1rem 2rem;
+
     font-size: 1.5rem;
     font-weight: 700;
-    margin-left: 2rem;
+
+    background-color: $colorPrimary;
+    color: $colorLight;
     border: unset;
   }
 }
