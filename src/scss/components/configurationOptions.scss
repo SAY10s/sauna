@@ -1,4 +1,17 @@
 @use "../variables" as *;
 @use "../mixins" as *;
-@use "../variables" as *;
-@use "../mixins" as *;
+
+.configurationOfGivenStepWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+.flexCenter70 {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  img {
+    margin-bottom: 0.5rem;
+  }
+}

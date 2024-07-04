@@ -22,8 +22,16 @@ span {
   font-family: inherit;
 }
 .selected {
-  background-color: $colorSecondaryDark;
-  color: $colorLight;
+  position: relative;
+}
+
+.selected::before {
+  position: absolute;
+  content: "✓";
+  font-size: 3rem;
+  left: 50%;
+  top: 39%;
+  transform: translate(-50%, -50%);
 }
 .bold {
   font-weight: bold;

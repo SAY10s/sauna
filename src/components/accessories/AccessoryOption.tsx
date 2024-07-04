@@ -39,8 +39,8 @@ const AccessoryOption: React.FC<PropsInterface> = ({ name, image }) => {
       className={`configurationOption ${isSelected ? "selected" : ""}`}
       onClick={handleOptionClick}
     >
-      <h4>{name}</h4>
       <img src={image} alt={name} />
+      <h4>{name}</h4>
     </div>
   );
 };

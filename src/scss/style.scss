@@ -5,7 +5,8 @@
 @use "./components/accessories" as *;
 @use "./components/navBar" as *;
 @use "./components/imageSlider" as *;
-//@use "./components/nav" as *;
+@use "./components/configurationOptions" as *;
+@use "./components/configurationSummary" as *;
 
 // global styles
 @use "./global" as *;
@@ -48,12 +49,7 @@ button {
 }
 
 //TEMP
-.configurationOfGivenStepWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
+
 .configurationOption {
   display: flex;
   flex-direction: column;

@@ -65,15 +65,15 @@ const ConfigurationOption: React.FC<PropsInterface> = ({ name, image }) => {
   if (currentConfigOption === name) {
     return (
       <div className="configurationOption selected" onClick={handleOptionClick}>
-        <h4>{name}</h4>
         <img src={image} alt={name} />
+        <h4>{name}</h4>
       </div>
     );
   }
   return (
     <div className="configurationOption" onClick={handleOptionClick}>
-      <h4>{name}</h4>
       <img src={image} alt={name} />
+      <h4>{name}</h4>
     </div>
   );
 };
