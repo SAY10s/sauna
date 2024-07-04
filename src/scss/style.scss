@@ -7,6 +7,7 @@
 @use "./components/imageSlider" as *;
 @use "./components/configurationOptions" as *;
 @use "./components/configurationSummary" as *;
+@use "./components/mobileBottomNavigation" as *;
 
 // global styles
 @use "./global" as *;

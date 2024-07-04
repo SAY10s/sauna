@@ -1,0 +1,37 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.mobileBottomNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: $colorLight;
+  padding: 2rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+  border-top: 1px solid lightgrey;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+
+  .price {
+    div:first-child {
+      font-weight: 700;
+    }
+    div:last-child {
+      font-size: 1.5rem;
+      color: $colorPrimary;
+      font-weight: bolder;
+    }
+  }
+  button {
+    background-color: $colorPrimary;
+    color: $colorLight;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    border: unset;
+  }
+}

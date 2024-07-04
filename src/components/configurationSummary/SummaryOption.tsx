@@ -34,7 +34,7 @@ const SummaryOption: React.FC<PropsInterface> = ({
 
     return (
       <>
-        <div className="stepName">{stepNameInPolish}</div>
+        <div className="stepName hideOnDesktop">{stepNameInPolish}</div>
 
         <div className="summaryOption">
           <img src={option?.image} alt={name} />
@@ -49,7 +49,7 @@ const SummaryOption: React.FC<PropsInterface> = ({
   } else {
     return (
       <>
-        <div className="stepName">{stepNameInPolish}</div>
+        <div className="stepName hideOnDesktop">{stepNameInPolish}</div>
 
         <div className="summaryOption">
           <img src="https://placehold.co/64?text=-" alt={name} />

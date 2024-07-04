@@ -6,6 +6,7 @@ import ConfigurationOfGivenStepWrapper from "../components/configurationOptions/
 import ConfigurationSummaryWrapper from "../components/configurationSummary/ConfigurationSummaryWrapper.tsx";
 import ChooseAccessories from "../components/accessories/ChooseAccessories.tsx";
 import ImageSliderWrapper from "../components/imageSlider/ImageSliderWrapper.tsx";
+import MobileBottomNavigation from "../components/mobileBottomNavigation/MobileBottomNavigation.tsx";
 
 const SaunaConfigurationView = () => {
   const currentConfigStepId = useSelector(
@@ -46,6 +47,7 @@ const SaunaConfigurationView = () => {
         </div>
       ) : null}
       {StepComponentContent}
+      <MobileBottomNavigation />
     </main>
   );
 };

@@ -24,7 +24,6 @@ span {
 .selected {
   position: relative;
 }
-
 .selected::before {
   position: absolute;
   content: "✓";
@@ -52,6 +51,11 @@ span {
 }
 @media only screen and (max-width: 600px) {
   .hideOnMobile {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .hideOnDesktop {
     display: none;
   }
 }
