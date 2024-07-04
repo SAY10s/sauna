@@ -17,12 +17,12 @@
 
   font-family: $primaryFont;
 }
-
 body {
   @include flex(col, flex-start, flex-start);
-  min-height: 100vh;
   background-color: $colorLight;
   color: $colorDark;
+
+  height: 300vh;
 }
 #root {
   width: 100%;
@@ -63,4 +63,16 @@ button {
 
 main {
   width: 100%;
+  height: 100%;
+}
+
+//----------------------------------------------------------------------------------------------------
+//The visualization was done in a 16:10 aspect ratio, so the page displayed on a standard 16:9 monitor
+//looks a bit different. While writing the code, it was assumed that the imageSlider should occupy 80%
+//of the page height under all conditions - this is not 100% consistent with the visualization,
+// but making a final decision requires further consultation.
+//----------------------------------------------------------------------------------------------------
+
+.imageSliderAndNavBarWrapper {
+  height: 80vh;
 }

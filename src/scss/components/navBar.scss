@@ -2,7 +2,7 @@
 @use "../mixins" as *;
 
 .navBarWrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
 
   right: 6%;
