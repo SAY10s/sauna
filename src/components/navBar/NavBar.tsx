@@ -1,7 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { nextStep, previousStep } from "../../store/SaunaConfigSlice.ts";
 import { RootState } from "../../store/store.ts";
-import { CURRENT_CONFIG_STEP_NAME_IN_POLISH } from "../../const/const.ts";
+import {
+  CURRENT_CONFIG_STEP_NAME_IN_POLISH,
+  CURRENT_CONFIG_STEP_NAME_IN_ENGLISH,
+} from "../../const/const.ts";
 
 const NavBar = () => {
   const saunaConfig = useSelector((state: RootState) => state.saunaConfig);
@@ -24,6 +27,11 @@ const NavBar = () => {
               <h3>{step}</h3>
             </div>
           );
+        else if (
+          saunaConfig[CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[index]] !== null &&
+          step !== "podsumowanie"
+        )
+          return <div key={index}>{step} &#10003;</div>;
         else return <div key={index}>{step}</div>;
       })}
       <br />

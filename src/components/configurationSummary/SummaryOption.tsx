@@ -2,6 +2,8 @@ import {
   CONFIGURATION_OPTIONS,
   CURRENT_CONFIG_STEP_NAME_IN_ENGLISH,
 } from "../../const/const.ts";
+import { useDispatch } from "react-redux";
+import { chooseStep } from "../../store/SaunaConfigSlice.ts";
 
 interface PropsInterface {
   stepNameInPolish: string;
@@ -21,12 +23,18 @@ const SummaryOption: React.FC<PropsInterface> = ({
   const options = CONFIGURATION_OPTIONS[stepIndex];
   const option = options.find((option) => option.name === name);
 
+  const dispatch = useDispatch();
+
+  const handleChoosingStep = () => {
+    dispatch(chooseStep(stepId));
+  };
+
   return (
     <div>
-      <h3>{stepNameInPolish}</h3>
-      <div>{name}</div>
       <img src={option?.image} alt={name} />
-      <div>{stepId}</div>
+      <h6>{stepNameInPolish}</h6>
+      <h4>{name}</h4>
+      <button onClick={handleChoosingStep}>Zmień &rarr;</button>
     </div>
   );
 };

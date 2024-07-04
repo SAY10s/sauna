@@ -17,35 +17,35 @@ export interface SaunaConfigStateInterface {
   accessories: string | null;
 }
 
-// const initialState: SaunaConfigStateInterface = {
-//   currentConfigStepId: 0,
-//
-//   model: null,
-//
-//   glazing: null,
-//   facade: null,
-//   interiorFinish: null,
-//   bench: null,
-//   stove: null,
-//   lighting: null,
-//
-//   accessories: null,
-// };
-
 const initialState: SaunaConfigStateInterface = {
-  currentConfigStepId: 8,
+  currentConfigStepId: 1,
 
   model: "Model 1",
 
   glazing: "Lustro Weneckie",
-  facade: "Blacha T-12",
-  interiorFinish: "Antisol Brązowy",
-  bench: "Antisol Grafitowy",
-  stove: "Marmur",
-  lighting: "Antisol Grafitowy",
+  facade: null,
+  interiorFinish: null,
+  bench: null,
+  stove: null,
+  lighting: null,
 
-  accessories: "Bez akcesoriów",
+  accessories: null,
 };
+
+// const initialState: SaunaConfigStateInterface = {
+//   currentConfigStepId: 8,
+//
+//   model: "Model 1",
+//
+//   glazing: "Lustro Weneckie",
+//   facade: "Blacha T-12",
+//   interiorFinish: "Antisol Brązowy",
+//   bench: "Antisol Grafitowy",
+//   stove: "Marmur",
+//   lighting: "Antisol Grafitowy",
+//
+//   accessories: "Bez akcesoriów",
+// };
 
 const SaunaConfigSlice = createSlice({
   name: "saunaConfig",
@@ -83,6 +83,9 @@ const SaunaConfigSlice = createSlice({
     previousStep: (state) => {
       if (state.currentConfigStepId > 0) state.currentConfigStepId -= 1;
     },
+    chooseStep: (state, action: PayloadAction<number>) => {
+      state.currentConfigStepId = action.payload;
+    },
   },
 });
 
@@ -97,6 +100,7 @@ export const {
   setAccessories,
   nextStep,
   previousStep,
+  chooseStep,
 } = SaunaConfigSlice.actions;
 
 export default SaunaConfigSlice.reducer;
