@@ -1,0 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.navBarWrapper {
+  display: flex;
+  background-color: #e71408;
+}

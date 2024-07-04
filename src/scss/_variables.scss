@@ -1,20 +1,18 @@
 //fonts
 
-// Cantarell
-@import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+// Roboto
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-// Fjalla One
-@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
-
-$primaryFont: "Cantarell", sans-serif;
-$headerFont: "Fjalla One", sans-serif;
+$primaryFont: "Roboto", sans-serif;
+$headerFont: "Roboto", sans-serif;
 
 //$colorLight: black;
 //$colorDark: white;
 
-$colorLight: #fafafa;
-$colorDark: #252223;
-$colorPrimary: #e71408;
+$colorLight: #f9fff9;
+$colorDark: #383838;
+$colorPrimary: #007c00;
+$colorSecondary: #098308;
 
 $colorSecondaryDark: #302c2d; // $colorDark + 4% lightness
 $colorSecondaryLight: #e9e7e7; // $colorLight + 4% lightness

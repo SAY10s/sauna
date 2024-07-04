@@ -26,7 +26,7 @@ const NavBar = () => {
   };
 
   return (
-    <div>
+    <div className="navBarWrapper">
       {CURRENT_CONFIG_STEP_NAME_IN_POLISH.map((step, index) => {
         if (index === saunaConfig.currentConfigStepId)
           return (

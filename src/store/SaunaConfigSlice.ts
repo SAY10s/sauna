@@ -18,7 +18,7 @@ export interface SaunaConfigStateInterface {
 }
 
 const initialState: SaunaConfigStateInterface = {
-  currentConfigStepId: 7,
+  currentConfigStepId: 0,
 
   model: "Model 1",
 
