@@ -38,6 +38,11 @@ const ConfigurationOption: React.FC<PropsInterface> = ({ name, image }) => {
   const currentConfigStepId = useSelector(
     (state: RootState) => state.saunaConfig.currentConfigStepId,
   );
+  const currentConfigStepNameInEnglish =
+    CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[currentConfigStepId];
+  const currentConfigOption = useSelector(
+    (state: RootState) => state.saunaConfig[currentConfigStepNameInEnglish],
+  );
 
   const actionMapping: ActionCreatorsMap = {
     model: setModel,
@@ -51,9 +56,7 @@ const ConfigurationOption: React.FC<PropsInterface> = ({ name, image }) => {
   };
 
   const handleOptionClick = () => {
-    const currentStepName =
-      CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[currentConfigStepId];
-    const action = actionMapping[currentStepName];
+    const action = actionMapping[currentConfigStepNameInEnglish];
 
     if (action) {
       dispatch(action(name));
@@ -62,6 +65,14 @@ const ConfigurationOption: React.FC<PropsInterface> = ({ name, image }) => {
     }
   };
 
+  if (currentConfigOption === name) {
+    return (
+      <div className="configurationOption selected" onClick={handleOptionClick}>
+        <h4>{name}</h4>
+        <img src={image} alt={name} />
+      </div>
+    );
+  }
   return (
     <div className="configurationOption" onClick={handleOptionClick}>
       <h4>{name}</h4>

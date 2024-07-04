@@ -21,3 +21,8 @@
 span {
   font-family: inherit;
 }
+
+.selected {
+  background-color: $colorSecondaryDark;
+  color: $colorLight;
+}
