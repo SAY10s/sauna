@@ -32,21 +32,6 @@ const initialState: SaunaConfigStateInterface = {
   accessories: [],
 };
 
-// const initialState: SaunaConfigStateInterface = {
-//   currentConfigStepId: 8,
-//
-//   model: "Model 1",
-//
-//   glazing: "Lustro Weneckie",
-//   facade: "Blacha T-12",
-//   interiorFinish: "Antisol Brązowy",
-//   bench: "Antisol Grafitowy",
-//   stove: "Marmur",
-//   lighting: "Antisol Grafitowy",
-//
-//   accessories: "Bez akcesoriów",
-// };
-
 const SaunaConfigSlice = createSlice({
   name: "saunaConfig",
   initialState,
