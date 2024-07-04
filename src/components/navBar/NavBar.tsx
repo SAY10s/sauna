@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { nextStep, previousStep } from "../../store/SaunaConfigSlice.ts";
+import {
+  chooseStep,
+  nextStep,
+  previousStep,
+} from "../../store/SaunaConfigSlice.ts";
 import { RootState } from "../../store/store.ts";
 import {
   CURRENT_CONFIG_STEP_NAME_IN_POLISH,
@@ -17,6 +21,9 @@ const NavBar = () => {
   const handlePreviousStep = () => {
     dispatch(previousStep());
   };
+  const handleStepChoice = (stepId: number) => {
+    dispatch(chooseStep(stepId));
+  };
 
   return (
     <div>
@@ -31,8 +38,27 @@ const NavBar = () => {
           saunaConfig[CURRENT_CONFIG_STEP_NAME_IN_ENGLISH[index]] !== null &&
           step !== "podsumowanie"
         )
-          return <div key={index}>{step} &#10003;</div>;
-        else return <div key={index}>{step}</div>;
+          return (
+            <div
+              key={index}
+              onClick={() => {
+                handleStepChoice(index);
+              }}
+            >
+              {step} &#10003;
+            </div>
+          );
+        else
+          return (
+            <div
+              key={index}
+              onClick={() => {
+                handleStepChoice(index);
+              }}
+            >
+              {step}
+            </div>
+          );
       })}
       <br />
       {Object.entries(saunaConfig).map(([key, value], index) => {
